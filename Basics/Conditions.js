@@ -89,7 +89,69 @@
 //     break
 // }
 
-console.log(new_day)
+// console.log(new_day)
+
+
+// *****************************************
+
+// 1 year first service, second year second service, 3rd year third service
+
+
+// car_date = new Date("04/20/2020") 
+// service_date = Date.now() - car_date
+// traffic_day = Math.floor(service_date/(1000*60*60*24))
+// console.log(service_date)
+// console.log(traffic_day) //1772 days
+
+// let service;
+// switch(true){
+
+//     case traffic_day <= 365:
+//         service = "First Service"
+//     break
+//     case traffic_day >= 365 && traffic_day <= 730:
+//     service = "Second Service"
+//     break
+        
+//     case traffic_day >= 730 && traffic_day <= 1095:
+//     service = "Third Service"
+//     break
+// }
+
+// console.log(service)
+
+
+// **********************************************************
+
+
+// let name = prompt("Who is there ? ")
+
+// if (name.toLowerCase() == "Cancel".toLowerCase()) {
+//     console.log(name)
+// } else if (name.toLowerCase() != "Cancel".toLowerCase() && name.toLowerCase() != "Admin".toLowerCase()) {
+//     console.log("I don't know you")
+// }
+// else{
+//     let password = prompt("Password? ")
+//     if (password.toLowerCase() == 'TheMaster'.toLowerCase()) {
+//         console.log("Welcome! ")
+//     } else if (password.toLowerCase() != 'TheMaster'.toLowerCase()) {
+//         console.log("Wrong Password")
+//     }
+//     else {
+//         console.log('Canceled')
+//     }
+// }
+
+// console.log(name)
+
+
+
+
+
+
+
+
 
 
 
