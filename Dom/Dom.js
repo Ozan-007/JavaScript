@@ -42,7 +42,7 @@
 
 // ** Multiple Elements Selection 
 
-let val;
+// let val;
 // val = document.getElementsByClassName('element')
 // console.log(val[0])
 
