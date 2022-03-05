@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dom</title>
-</head>
-<body>
-    <div class="todo">
-
-        <div id="header">To-do App</div>
+  </head>
+  <body>
+    <div class="todo-app" style="border: 2px solid red">
+        <div
+        class="todos"
+        style="margin: 1rem; border: 2px solid black; padding: 1rem"
+        >
+        <h2>Todos</h2>
+        <input type="text" class="addTask" />
         <button class="new">New</button>
-        <h2></h2>
-        <input type="text" class="addTask">
-        <ul class="list-group"> 
-            <li class="element">First One</li>
-            <li class="element">Second One</li>
-            <li class="element">Third One</li>
+        <ul class="list-group">
+          <li class="element">First One</li>
+          <li class="element">Second One</li>
+          <li class="element">Third One</li>
         </ul>
+      </div>
+      <form
+        action=""
+        class="form"
+        style="border: 2px solid green; margin: 1rem; padding: 1rem"
+      >
+        <h1>Form</h1>
+        <input type="text" />
+        <button type="submit">Submit</button>
         <button class="delete">Delete</button>
-        <form action="" class="form">
-            <h1>Form</h1>
-            <input type="text">
-            <button type="submit">Submit</button>
-        </form>
-        
+      </form>
     </div>
-    <script src="Keyboard_Events.js"></script>
-</body>
+    <script src="Bubbling_Capturing.js"></script>
+  </body>
 </html>
