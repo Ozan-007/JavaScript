@@ -1,0 +1,12 @@
+body{
+    padding: 2rem;
+}
+.card{
+    margin: 1rem;
+}
+
+.card-header{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
