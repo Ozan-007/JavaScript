@@ -15,7 +15,6 @@ const form = document.querySelector('form')
 function events() {
     
     form.addEventListener('submit', AddNewElement)
-    DeleteBtn.addEventListener('click', RemoveAllElements)
 }
 
 const AddNewElement = (e) => {
@@ -23,9 +22,22 @@ const AddNewElement = (e) => {
     e.preventDefault();
     console.log(input.value + ` Submitted `  )
     const li =  document.createElement('li')
-    li.textContent = input.value
+    li.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-center')
+    
+    // create remove sign 
+
+    const a = document.createElement('a')
+    a.className='delete-item float right';
+    a.setAttribute('href',"#");
+    a.innerHTML = '<button>X</button>'
+    console.log(a)
+    
+    // Adding to do element to the list
+    
+    li.appendChild(document.createTextNode(input.value))
     list.appendChild(li)
-    input.value = " "
+    li.appendChild(a)
+    input.value = ""
 }
 
 
