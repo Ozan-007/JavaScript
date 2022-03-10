@@ -38,6 +38,16 @@ const AddNewElement = (e) => {
     list.appendChild(li)
     li.appendChild(a)
     input.value = ""
+
+    // removing elements from the list
+    
+    const removeElement = (e) => {
+        console.log(li)
+        list.removeChild(li)
+        
+    }
+    a.addEventListener('click',removeElement)
+
 }
 
 
