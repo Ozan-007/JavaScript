@@ -57,12 +57,15 @@ const AddNewElement = (e) => {
 
 function removeAllItems(e){
 
-    list.childNodes.forEach((item) => {
-        if (item.nodeType === 1){
-            item.remove();
-        }
+    // list.childNodes.forEach((item) => {
+    //     if (item.nodeType === 1){
+    //         item.remove();
+    //     }
 
-    } )
+    // } )
+    
+
+    list.innerHTML = "" // Shortest solution
 
 }
     
