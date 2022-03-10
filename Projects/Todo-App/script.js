@@ -13,9 +13,13 @@ const form = document.querySelector('form')
 
 
 function events() {
-    
-    form.addEventListener('submit', AddNewElement)
+    form.addEventListener('submit', AddNewElement),
+    DeleteBtn.addEventListener('click', removeAllItems )
+
 }
+
+
+
 
 const AddNewElement = (e) => {
     
@@ -25,7 +29,7 @@ const AddNewElement = (e) => {
     li.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-center')
     
     // create remove sign 
-
+    
     const a = document.createElement('a')
     a.className='delete-item float right';
     a.setAttribute('href',"#");
@@ -38,7 +42,7 @@ const AddNewElement = (e) => {
     list.appendChild(li)
     li.appendChild(a)
     input.value = ""
-
+    
     // removing elements from the list
     
     const removeElement = (e) => {
@@ -49,6 +53,19 @@ const AddNewElement = (e) => {
     a.addEventListener('click',removeElement)
 
 }
+
+
+function removeAllItems(e){
+
+    list.childNodes.forEach((item) => {
+        if (item.nodeType === 1){
+            item.remove();
+        }
+
+    } )
+
+}
+    
 
 
 events();
