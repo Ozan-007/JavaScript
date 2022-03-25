@@ -32,25 +32,70 @@ let Person = function(name,yearofBirth,job) {
 
 }
 
-Person.prototype.calculateAge = function(){
-   return new Date().getFullYear() - this.yearofBirth
+// Person.prototype.calculateAge = function(){
+//    return new Date().getFullYear() - this.yearofBirth
+// }
+
+
+// Person.prototype.getName = () =>{this.name}
+
+// let emma = new Person("emma",1997,"teacher");
+// let john = new Person("john",2008,"student");
+
+
+
+// console.log(emma)
+// console.log(emma.getName())
+// console.log(emma.calculateAge())
+// console.log("*********************")
+// console.log(john.getName())
+// console.log(john.calculateAge())
+
+
+// ******************************************
+
+function Employee(name,salary){
+    this.name = name;
+    this.salary = salary;
+
+    if (!(this instanceof Employee)){
+        return new Employee(name,salary);
+    }
+
+}
+
+Employee.prototype.CalculateNetSalary = () =>{
+
+    
+    tax = 0;
+    if(salary*12 <20000){
+        tax = salary*0.2
+        salary -= tax
+    }
+    else if(salary*12>20000 && salary<30000){
+        tax = salary*0.25
+        salary -= tax
+    }
+    else{
+        tax = salary*0.3
+        salary -= tax
+    }
+
+    return {
+        tax:tax,
+        salary:salary,
+     }
+
 }
 
 
-Person.prototype.getName = () =>{this.name}
-
-let emma = new Person("emma",1997,"teacher");
-let john = new Person("john",2008,"student");
-
+let ozan = Employee("Ozan",3000);
+let emma = new Employee("Emma",2500);
+let julie = new Employee("Julie",1000);
 
 
 console.log(emma)
-console.log(emma.getName())
-console.log(emma.calculateAge())
-console.log("*********************")
-console.log(john.getName())
-console.log(john.calculateAge())
-
+console.log(julie.CalculateNetSalary()['tax','salary'])
 
 
 
