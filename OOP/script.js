@@ -76,6 +76,75 @@
 // }
 
 
+// Number 
+
+// let num1  = 1999;
+// let num2  = new Number(2022);
+
+// console.log(num1) // returns 1999
+// console.log(typeof(num1)) // type is 'number'
+// console.log(num2)// returns [Number: 2022]
+// console.log(typeof(num2)) // type is object 
+
+
+// if(num1 === 1999){
+//     console.log(true)
+// }
+// else{
+//     console.log(false)
+// }
+
+// if(num2 === 2022){ //!! Type is not Equal
+//     console.log(true)
+// }
+// else{
+//     console.log(false)
+// }
+
+// *********
+
+//Boolean
+
+// let var1 = new Boolean(true)
+// let var2 = true
+
+// console.log(typeof(var1))
+// console.log(typeof(var2))
+
+// **********
+
+
+// String.prototype.repeat = function(n){
+//     return new Array(n+1);
+// }
+
+// console.log('ozan'.repeat(2)); 
+// console.log(new Array(6)); 
+
+
+
+let arr1 = new Array("Ozan","Adil","Ankara")
+let arr2 = ["Ozan","Adil","Ankara"]
+
+// console.log(typeof(arr1))
+// console.log(typeof(arr2))
+
+
+Array.prototype.remove = function(element){
+    let index = this.indexOf(element);
+    if(index > -1){
+        this.splice(index,1);
+    }
+    return this;
+}
+
+arr2.remove('Ankara')
+console.log(arr2)
+
+
+
+
+
 
 
 
