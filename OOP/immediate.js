@@ -26,3 +26,4 @@
 //     console.log(`Hello ${name} today is ${days[date]}`)
 
 // }("James")) // This is why they are called immediate functions...
+
