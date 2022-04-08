@@ -44,9 +44,10 @@ Quiz.prototype.isFinished = function () {
 Quiz.prototype.guess = function(answer){
     if (this.questions[this.questionIndex].answer.toLowerCase != answer.toLowerCase) {
         console.log("Wrong.");
-    }
-    else{
+      }
+      else{
         console.log("Correct!!");
+        this.score++;
     }
     this.questionIndex++;
         
@@ -56,9 +57,13 @@ let quiz = new Quiz(questions);
 
 quiz.getQuestion();
 quiz.guess("Basketball")
+
+console.log(quiz.score)
 console.log(quiz.questionIndex);
 quiz.getQuestion();
 quiz.guess("ankara")
+console.log(quiz.isFinished())
+console.log(quiz.score)
 
 // console.log(quiz.isFinished());
 
