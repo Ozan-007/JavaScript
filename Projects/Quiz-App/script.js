@@ -34,7 +34,7 @@ function Quiz(questions) {
 }
 
 Quiz.prototype.getQuestion = function () {
-  console.log(this.questions[this.questionIndex].question);
+  return (this.questions[this.questionIndex]);
 };
 
 Quiz.prototype.isFinished = function () {
@@ -56,15 +56,23 @@ Quiz.prototype.guess = function(answer){
 let quiz = new Quiz(questions);
 
 quiz.getQuestion();
-quiz.guess("Basketball")
+// quiz.guess("Basketball")
 
-console.log(quiz.score)
-console.log(quiz.questionIndex);
-quiz.getQuestion();
-quiz.guess("ankara")
-console.log(quiz.isFinished())
-console.log(quiz.score)
+// console.log(quiz.score)
+// console.log(quiz.questionIndex);
+// quiz.getQuestion();
+// quiz.guess("ankara")
+// console.log(quiz.isFinished())
+// console.log(quiz.score)
 
 // console.log(quiz.isFinished());
+
+// Start Quiz
+
+document.getElementById('question').innerHTML = quiz.getQuestion().question
+
+for (let index = 0; index < quiz.getQuestion().choices.length; index++) {
+  document.getElementById(`choice${index}`).innerHTML = quiz.getQuestion().choices[index];  
+}
 
 
