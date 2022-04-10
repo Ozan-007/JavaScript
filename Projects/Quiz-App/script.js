@@ -56,23 +56,35 @@ Quiz.prototype.guess = function(answer){
 let quiz = new Quiz(questions);
 
 quiz.getQuestion();
-// quiz.guess("Basketball")
-
-// console.log(quiz.score)
-// console.log(quiz.questionIndex);
-// quiz.getQuestion();
-// quiz.guess("ankara")
-// console.log(quiz.isFinished())
-// console.log(quiz.score)
-
-// console.log(quiz.isFinished());
 
 // Start Quiz
 
-document.getElementById('question').innerHTML = quiz.getQuestion().question
+function loadQuestion(){
+  if(quiz.isFinished()){
+    console.log(quiz.showScore()) 
+  }
+  else{
+    document.getElementById('question').innerHTML = quiz.getQuestion().question
+    
+    for (let index = 0; index < quiz.getQuestion().choices.length; index++) {
+      document.getElementById(`choice${index}`).innerHTML = quiz.getQuestion().choices[index];  
 
-for (let index = 0; index < quiz.getQuestion().choices.length; index++) {
-  document.getElementById(`choice${index}`).innerHTML = quiz.getQuestion().choices[index];  
+        makeGuess(`choice${index}`,quiz.getQuestion().choices[index])
+    }
+
+
+  }
 }
 
+function makeGuess(id,answer){
+
+  let btn = document.getElementById(id);
+  btn.onclick = function(){
+    quiz.guess(answer)
+  }
+  loadQuestion();
+}
+
+
+loadQuestion();
 
