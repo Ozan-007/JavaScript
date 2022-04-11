@@ -43,11 +43,11 @@ Quiz.prototype.isFinished = function () {
 
 Quiz.prototype.guess = function(answer){
     if (this.questions[this.questionIndex].answer.toLowerCase != answer.toLowerCase) {
-        console.log("Wrong.");
+        return false
       }
       else{
-        console.log("Correct!!");
         this.score++;
+        return true
     }
     this.questionIndex++;
         
@@ -59,32 +59,43 @@ quiz.getQuestion();
 
 // Start Quiz
 
-function loadQuestion(){
-  if(quiz.isFinished()){
-    console.log(quiz.showScore()) 
-  }
-  else{
-    document.getElementById('question').innerHTML = quiz.getQuestion().question
-    
-    for (let index = 0; index < quiz.getQuestion().choices.length; index++) {
-      document.getElementById(`choice${index}`).innerHTML = quiz.getQuestion().choices[index];  
+function askQuestion() {
+    let questionTitle  =  document.getElementById('question')
+    questionTitle.innerHTML = questions[0]['question']
 
-        makeGuess(`choice${index}`,quiz.getQuestion().choices[index])
+    for (let i = 0; i < questions[0]['choices'].length; i++) {
+       choice = document.getElementById(`choice${i}`)
+       choice.innerHTML = questions[0]['choices'][i]
+      
+    }
+    
+    makeGuess('choice0')
+    
+
     }
 
+function makeGuess(id) {
+  
+  selection =  document.getElementById(id)
+  selection.onclick = function(){
 
+    console.log(quiz.guess(selection.innerHTML))
+  
   }
-}
-
-function makeGuess(id,answer){
-
-  let btn = document.getElementById(id);
-  btn.onclick = function(){
-    quiz.guess(answer)
-  }
-  loadQuestion();
-}
+  
+  }  
 
 
-loadQuestion();
+askQuestion();
+
+
+
+
+
+
+
+
+
+
+
 
