@@ -1,7 +1,7 @@
 // Creating Question Objects.
 
-function Question(question, choices, answer) {
-  this.question = question;
+function Question(text, choices, answer) {
+  this.text = text;
   this.choices = choices;
   this.answer = answer;
 }
@@ -13,25 +13,31 @@ Question.prototype.checkAnswer = function (answer) {
 
 let question1 = new Question(
   "What is the best sport ?",
-  ["basketball", "soccer", "tennis"],
+  [ "soccer", "tennis","basketball","badmington"],
   "basketball"
 );
 let question2 = new Question(
   "Which city is the capital of Turkey ?",
-  ["Ankara", "Istanbul", "Antalya"],
+  ["Istanbul", "Ankara", "Antalya","Izmir"],
   "Ankara"
+);
+
+let question3 = new Question(
+  "What is the best programming language ?",
+  ["JavaScript", "Python", "Java","C#"],
+  "JavaScript"
 );
 
 // console.log(question1.checkAnswer("basketball"));
 
 // Quiz Constructor
-
-let questions = [question1, question2];
+var questions = [question1, question2,question3];
 function Quiz(questions) {
   this.questions = questions;
   this.score = 0;
   this.questionIndex = 0;
 }
+
 
 Quiz.prototype.getQuestion = function () {
   return (this.questions[this.questionIndex]);
@@ -42,60 +48,65 @@ Quiz.prototype.isFinished = function () {
 };
 
 Quiz.prototype.guess = function(answer){
-    if (this.questions[this.questionIndex].answer.toLowerCase != answer.toLowerCase) {
-        return false
-      }
-      else{
-        this.score++;
-        return true
+    
+    let question = this.getQuestion();
+    if(question.checkAnswer(answer)){
+      this.score++;
+      console.log('true')
     }
     this.questionIndex++;
-        
-}
+
+    }
 
 let quiz = new Quiz(questions);
 
-quiz.getQuestion();
+// Start 
 
-// Start Quiz
-
-function askQuestion() {
-    let questionTitle  =  document.getElementById('question')
-    questionTitle.innerHTML = questions[0]['question']
-
-    for (let i = 0; i < questions[0]['choices'].length; i++) {
-       choice = document.getElementById(`choice${i}`)
-       choice.innerHTML = questions[0]['choices'][i]
+function uploadQuestion() {
+    if(quiz.isFinished()){
+      showScore();
+    }
+    else{
+      let question = quiz.getQuestion();
+      let choices = question.choices;
+      document.getElementById('question').textContent = question.text;
       
+      for (let i = 0; i < choices.length; i++) {
+        let choice = document.getElementById(`choice${i}`);
+        choice.textContent = choices[i];
+        
+        guess('btn'+i,choices[i])
+
+      }
+ 
+      showProgress();
+ 
     }
-    
-    makeGuess('choice0')
-    
+}
 
-    }
-
-function makeGuess(id) {
-  
-  selection =  document.getElementById(id)
-  selection.onclick = function(){
-
-    console.log(quiz.guess(selection.innerHTML))
-  
+function guess(id,guess) {
+  btn = document.getElementById(id)
+  btn.onclick = function(){
+    quiz.guess(guess)
+    uploadQuestion();
   }
-  
-  }  
-
-
-askQuestion();
+}
 
 
 
+function showScore() {
+ 
+    let scoreCard = `<h2>Score: ${quiz.score}</h2>`    // return quiz.score;
+    document.querySelector('.card-body').innerHTML = scoreCard
 
+}
 
+uploadQuestion();
 
-
-
-
-
-
-
+function showProgress() {
+  let questionTotal = quiz.questions.length;
+  let questionNumber = quiz.questionIndex+1;
+  if (questionNumber <= 3) {
+    document.getElementById('progress').innerHTML = `Question ${questionNumber} of ${questionTotal}`;
+  }
+}
