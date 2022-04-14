@@ -42,4 +42,4 @@ function Game(){
 let player = new Game()
 let player2 = new Game()
 
-player2.addLive();
+// player2.addLive();
