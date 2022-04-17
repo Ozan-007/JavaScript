@@ -25,7 +25,7 @@ let arr2 = ["six","seven","eight"];
 
 let arr3 = ["one",...arr1,"five",...arr2]
 
-// arr1.push(...arr2) // push method does this for every element in the list.
-// arr1.unshift(...arr2) // unshift adds elements to the beginning of the array for every element in the list.
+// arr1.push(...arr2) // push method does this for every element in the array.
+// arr1.unshift(...arr2) // unshift adds elements to the beginning of the array for every element in the array.
 console.log(arr1) // returns ["two","three","four","six","seven","eight"]
 console.log(arr3) // returns ["one","two","three","four","five","six","seven","eight"]

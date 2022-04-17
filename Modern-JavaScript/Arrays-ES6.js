@@ -1,4 +1,42 @@
-//* Arrays
+//* Arrays protoype
+
+//? at: ƒ at()
+//? concat: ƒ concat()
+//? constructor: ƒ Array()
+//? copyWithin: ƒ copyWithin()
+//? entries: ƒ entries()
+//? every: ƒ every()
+//? fill: ƒ fill()
+//? filter: ƒ filter()
+//? find: ƒ find()
+//? findIndex: ƒ findIndex()
+//? findLast: ƒ findLast()
+//? findLastIndex: ƒ findLastIndex()
+//? flat: ƒ flat()
+//? flatMap: ƒ flatMap()
+//? forEach: ƒ forEach()
+//? includes: ƒ includes()
+//? indexOf: ƒ indexOf()
+//? join: ƒ join()
+//? keys: ƒ keys()
+//? lastIndexOf: ƒ lastIndexOf()
+//? length: 0
+//? map: ƒ map()
+//? pop: ƒ pop()
+//? push: ƒ push()
+//? reduce: ƒ reduce()
+//? reduceRight: ƒ reduceRight()
+//? reverse: ƒ reverse()
+//? shift: ƒ shift()
+//? slice: ƒ slice()
+//? some: ƒ some()
+//? sort: ƒ sort()
+//? splice: ƒ splice()
+//? toLocaleString: ƒ toLocaleString()
+//? toString: ƒ toString()
+//? unshift: ƒ unshift()
+//? values: ƒ values()
+
 
 const boxes = document.querySelectorAll('.box')
 
