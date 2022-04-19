@@ -27,23 +27,23 @@
 
 // Person.sayHi() // works.
 
-class Point {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
 
-  static distance(a, b) {
-    const dx = a.x - b.x;
-    const dy = a.y - b.y;
+//   static distance(a, b) {
+//     const dx = a.x - b.x;
+//     const dy = a.y - b.y;
 
-    return Math.hypot(dx, dy);
-  }
-}
+//     return Math.hypot(dx, dy);
+//   }
+// }
 
-let d1 = new Point(10, 10);
-let d2 = new Point(20, 30);
-console.log(d1.x);
+// let d1 = new Point(10, 10);
+// let d2 = new Point(20, 30);
+// console.log(d1.x);
 
-console.log(Point.distance(d1, d2));
+// console.log(Point.distance(d1, d2));
 
